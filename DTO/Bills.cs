@@ -42,6 +42,8 @@ namespace DTO
 
         public int ChiNhanhID { get; set; }
 
+        public Guid rowguid { get; set; }
+
         public virtual Account Account { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

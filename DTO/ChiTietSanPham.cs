@@ -35,6 +35,8 @@ namespace DTO
 
         public string ImgURL { get; set; }
 
+        public Guid rowguid { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BillDetails> BillDetails { get; set; }
 

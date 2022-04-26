@@ -24,5 +24,13 @@ namespace DAO
             _currentConnectionString = connectionString;
             _dbContext = new TshoesContext(_currentConnectionString);
         }
+
+        public void Clear()
+        {
+            _currentConnectionString = "";
+            CurrentLoginInfo = null;
+            CurrentBranch = "";
+            _dbContext = null;
+        }
     }
 }

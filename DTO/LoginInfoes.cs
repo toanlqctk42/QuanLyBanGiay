@@ -12,5 +12,6 @@ namespace DTO
 
         [Key]
         public string Id { get; set; }
+
     }
 }

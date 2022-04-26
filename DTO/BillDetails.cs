@@ -26,6 +26,8 @@ namespace DTO
 
         public int Giaban { get; set; }
 
+        public Guid rowguid { get; set; }
+
         public virtual Bills Bills { get; set; }
 
         public virtual ChiTietSanPham ChiTietSanPham { get; set; }

@@ -19,6 +19,8 @@ namespace DTO
 
         public int SoLuongNhap { get; set; }
 
+        public Guid rowguid { get; set; }
+
         public virtual ChiTietSanPham ChiTietSanPham { get; set; }
 
         public virtual NhapHang NhapHang { get; set; }

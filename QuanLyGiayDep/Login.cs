@@ -5,12 +5,21 @@ using System.Configuration;
 using System.Linq;
 using System.Windows.Forms;
 using DAO;
-using BUS;
 
 namespace QuanLyGiayDep
 {
     public partial class Login : DevExpress.XtraEditors.XtraForm
     {
+        private static Login _instance;
+        public static Login Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new Login();
+                return _instance;
+            }
+        }
         public Login()
         {
             InitializeComponent();
@@ -39,15 +48,19 @@ namespace QuanLyGiayDep
 
             try
             {
-                if (DbcontextBus.Instance.Login(loginName, password, branch, branchId))
+                if (dbContext.Instance.login(loginName, password, branch, branchId))
                 {
-                    Form1 form1 = new Form1();
-                    form1.Show();
+                    this.Hide();
+                    if(Form1.Instance.ShowDialog()==DialogResult.OK)
+                    {
+                        this.Show();
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Sai Thông tin đăng nhập \r\n" + ex.Message, "Thông Báo", MessageBoxButtons.OK);
+                simpleButton2.PerformClick();
             }
         }
 

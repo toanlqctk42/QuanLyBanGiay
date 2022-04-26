@@ -1,6 +1,8 @@
 ﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
 using System.Linq;
 
 namespace DAO
@@ -10,25 +12,99 @@ namespace DAO
         private static dbContext _instance = null;
         public static dbContext Instance => _instance ?? (_instance = new dbContext());
 
-        public void login(string loginName, string password, string chinhanh, int chinhanhID)
+        public bool login(string loginName, string password, string chinhanh, int chinhanhID)
         {
             WorkingContext.Instance.CurrentBranch = chinhanh;
             WorkingContext.Instance.CurrentBranchId = chinhanhID;
             WorkingContext.Instance.CurrentLoginName = loginName;
-            var connectionName = string.Format("Branch{0}", chinhanhID);
-            string connectionString = ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
-            connectionString = string.Format(connectionString, loginName, password);
-            WorkingContext.Instance.Initialize(connectionString);
-            var dbcontext = WorkingContext.Instance._dbContext;
+            
+            WorkingContext.Instance.Initialize(Connectionstring(chinhanhID,loginName,password));
+            TshoesContext dbcontext = WorkingContext.Instance._dbContext;
             var loginInfo = dbcontext.Database.SqlQuery<LoginInfoes>("exec sp_getLoginInfo @p0", loginName).FirstOrDefault();
             WorkingContext.Instance.CurrentLoginInfo = loginInfo;
+            return true;
+        }
+
+        public string Connectionstring(int chinhanhId, string loginName, string pass)
+        {
+            var connectionName = string.Format("Branch{0}", chinhanhId);
+            string connectionString = ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
+            connectionString = string.Format(connectionString, loginName, pass);
+            return connectionString;
         }
 
         public List<Chinhanh> GetChinhanhs()
         {
-            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
-
-            return tshoesContext.Chinhanh.ToList();
+            using (TshoesContext tshoesContext = WorkingContext.Instance._dbContext)
+            {
+                return tshoesContext.Chinhanh.ToList();
+            }
         }
+
+        public List<SanPham> GetSanphams()
+        {
+            /*using (TshoesContext tshoesContext = WorkingContext.Instance._dbContext)
+            {*/
+                TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+                return tshoesContext.SanPham.ToList();/*
+            }*/
+        }
+
+        public List<Account> GetAccounts()
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            return tshoesContext.Account.Where(x => x.ChiNhanh_ID == WorkingContext.Instance.CurrentBranchId).ToList();
+        }
+        public List<Account> FilterAccount_chinhanhID(int chinhanhID)
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            if(chinhanhID != WorkingContext.Instance.CurrentBranchId)
+            {
+                return tshoesContext.Database.SqlQuery<Account>("exec [dbo].[sp_GetAllUSer]").ToList();
+            }
+            else
+            {
+                return tshoesContext.Account.ToList();
+            }
+        }
+
+        public int ThemNhanVien(string loginName , string password , string roleName,int chinhanhID,string Hoten)
+        {
+            try
+            {
+                var tshoesContext = WorkingContext.Instance._dbContext;
+                if(Convert.ToInt32(tshoesContext.Database.ExecuteSqlCommand($"DECLARE @return_value int" +
+                    $" EXEC  @return_value = [dbo].[SP_TaoTaiKhoan]" +
+                    $" @LGNAME = N'{loginName}', " +
+                    $" @PASS = N'{password}'," +
+                    $"@USERNAME = N'{Hoten}'," +
+                    $"@ROLE = N'{roleName}' " +
+                    $"SELECT  'Return Value' = @return_value"))==0)
+                {
+                    Account account = new Account()
+                    {
+                        TenTK = loginName,
+                        Fullname = Hoten,
+                        Ngaykhoitao = DateTime.Now,
+                        MatKhau = password,
+                        ChiNhanh_ID = chinhanhID,
+                        Active = 1
+                    };
+                    tshoesContext.Account.Add(account);
+                    tshoesContext.SaveChanges();
+                    return 0;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+
+
     }
 }
