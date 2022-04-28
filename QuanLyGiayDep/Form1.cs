@@ -44,7 +44,13 @@ namespace QuanLyGiayDep
 
         private void aceThongke_Click(object sender, EventArgs e)
         {
-
+            if (!container.Controls.Contains(ucThongke.Instance))
+            {
+                container.Controls.Add(ucThongke.Instance);
+                ucThongke.Instance.Dock = DockStyle.Fill;
+                ucThongke.Instance.BringToFront();
+            }
+            ucThongke.Instance.BringToFront();
         }
 
         private void acesanpham_Click(object sender, EventArgs e)

@@ -33,12 +33,11 @@ namespace DAO
             return connectionString;
         }
 
+        #region return list
         public List<Chinhanh> GetChinhanhs()
         {
-            using (TshoesContext tshoesContext = WorkingContext.Instance._dbContext)
-            {
-                return tshoesContext.Chinhanh.ToList();
-            }
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            return tshoesContext.Chinhanh.ToList();
         }
 
         public List<SanPham> GetSanphams()
@@ -55,6 +54,13 @@ namespace DAO
             TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
             return tshoesContext.Account.Where(x => x.ChiNhanh_ID == WorkingContext.Instance.CurrentBranchId).ToList();
         }
+
+        public List<Bills> GetBills()
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            return tshoesContext.Bills.ToList();
+        }
+
         public List<Account> FilterAccount_chinhanhID(int chinhanhID)
         {
             TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
@@ -68,6 +74,44 @@ namespace DAO
             }
         }
 
+        public List<Bills> FilterBills_chinhanhID(int chinhanhID)
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            if (chinhanhID != WorkingContext.Instance.CurrentBranchId)
+            {
+                return tshoesContext.Database.SqlQuery<Bills>($"exec [dbo].[sp_GetAllBills] {chinhanhID}").ToList();
+            }
+            else
+            {
+                return tshoesContext.Bills.ToList();
+            }
+        }
+
+        public List<SanPham> GetSanPhams()
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            return tshoesContext.SanPham.ToList();
+        }
+
+        public List<ChiTietSanPham> GetchiTietSanPhams()
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            return tshoesContext.ChiTietSanPham.ToList();
+        }
+
+        public List<NhomSP> GetNhomSPs()
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            return tshoesContext.NhomSP.ToList();
+        }
+
+        public List<ThuongHieu> GetThuongHieus()
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            return tshoesContext.ThuongHieu.ToList();
+        }
+
+        #endregion
         public int ThemNhanVien(string loginName , string password , string roleName,int chinhanhID,string Hoten)
         {
             try
@@ -105,6 +149,51 @@ namespace DAO
             }
         }
 
+        public int saveSP(SanPham sanPham)
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            
+            if (sanPham != null)
+            {
+                if (tshoesContext.Entry(sanPham).State == EntityState.Detached)
+                    tshoesContext.Set<SanPham>().Attach(sanPham);
+
+                if (sanPham.SanPhamID == 0)
+                    tshoesContext.Entry(sanPham).State = EntityState.Added;
+                else
+                    tshoesContext.Entry(sanPham).State = EntityState.Modified;
+
+                tshoesContext.SaveChanges();
+                return sanPham.SanPhamID;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public int SaveCTSanPham(ChiTietSanPham chiTietSanPham)
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+                if (chiTietSanPham != null)
+                {
+                    if (tshoesContext.Entry(chiTietSanPham).State == EntityState.Detached)
+                        tshoesContext.Set<ChiTietSanPham>().Attach(chiTietSanPham);
+
+                    if (chiTietSanPham.ChitietSPID == 0)
+                        tshoesContext.Entry(chiTietSanPham).State = EntityState.Added;
+                    else
+                        tshoesContext.Entry(chiTietSanPham).State = EntityState.Modified;
+
+                    /*tshoesContext.ChiTietSanPham.u*/
+                    tshoesContext.SaveChanges();
+
+                    return chiTietSanPham.ChitietSPID;
+                }
+                else
+                {
+                    return 0;
+                }
+        }
 
     }
 }

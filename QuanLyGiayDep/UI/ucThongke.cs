@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DAO;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,8 @@ namespace QuanLyGiayDep.UI
 {
     public partial class ucThongke : DevExpress.XtraEditors.XtraUserControl
     {
-        private ucThongke _instance;
-        public ucThongke Instance
+        private static ucThongke _instance;
+        public static ucThongke Instance
         {
             get
             {
@@ -26,6 +27,25 @@ namespace QuanLyGiayDep.UI
         public ucThongke()
         {
             InitializeComponent();
+        }
+
+        private void ucThongke_Load(object sender, EventArgs e)
+        {
+            billsBindingSource.DataSource = dbContext.Instance.GetBills();
+            if(WorkingContext.Instance.CurrentLoginInfo.RoleName == "GIAMDOC")
+            {
+                cbChinhanh.Enabled = true;
+            }
+            else
+            {
+                cbChinhanh.Enabled = false;
+            }    
+        }
+
+
+        private void cbChinhanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            billsBindingSource.DataSource = dbContext.Instance.FilterBills_chinhanhID(cbChinhanh.SelectedIndex + 1);
         }
     }
 }

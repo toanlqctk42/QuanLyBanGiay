@@ -51,16 +51,11 @@ namespace QuanLyGiayDep.UI
             this.txtTenSP = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
-            this.cbNhomSP = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.cbThuongHieu = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtGiaNhap = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
@@ -70,7 +65,7 @@ namespace QuanLyGiayDep.UI
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSoLuong = new DevExpress.XtraEditors.TextEdit();
             this.chiTietSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -87,6 +82,15 @@ namespace QuanLyGiayDep.UI
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
             this.txtMau = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.cbNhomSP = new System.Windows.Forms.ComboBox();
+            this.nhomSPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbThuongHieu = new System.Windows.Forms.ComboBox();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.txtGiaBan = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -104,17 +108,11 @@ namespace QuanLyGiayDep.UI
             ((System.ComponentModel.ISupportInitialize)(this.txtTenSP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
             this.panelControl10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbNhomSP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbThuongHieu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGiaNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
@@ -124,7 +122,7 @@ namespace QuanLyGiayDep.UI
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
             this.panelControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietSanPhamBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).BeginInit();
@@ -136,6 +134,13 @@ namespace QuanLyGiayDep.UI
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
             this.panelControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMau.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhomSPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).BeginInit();
+            this.panelControl14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -179,7 +184,6 @@ namespace QuanLyGiayDep.UI
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSanPham.Size = new System.Drawing.Size(900, 531);
             this.dgvSanPham.TabIndex = 0;
-            this.dgvSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellContentClick);
             // 
             // maSanPhamDataGridViewTextBoxColumn
             // 
@@ -250,14 +254,14 @@ namespace QuanLyGiayDep.UI
             this.flowLayoutPanel1.Controls.Add(this.panelControl3);
             this.flowLayoutPanel1.Controls.Add(this.panelControl10);
             this.flowLayoutPanel1.Controls.Add(this.panelControl4);
-            this.flowLayoutPanel1.Controls.Add(this.panelControl5);
             this.flowLayoutPanel1.Controls.Add(this.panelControl6);
+            this.flowLayoutPanel1.Controls.Add(this.panelControl5);
             this.flowLayoutPanel1.Controls.Add(this.panelControl13);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(361, 527);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // panelControl2
             // 
@@ -266,7 +270,7 @@ namespace QuanLyGiayDep.UI
             this.panelControl2.Location = new System.Drawing.Point(3, 3);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(353, 44);
-            this.panelControl2.TabIndex = 2;
+            this.panelControl2.TabIndex = 0;
             // 
             // txtMaSP
             // 
@@ -294,7 +298,7 @@ namespace QuanLyGiayDep.UI
             this.panelControl3.Location = new System.Drawing.Point(3, 53);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(353, 47);
-            this.panelControl3.TabIndex = 2;
+            this.panelControl3.TabIndex = 1;
             // 
             // txtTenSP
             // 
@@ -324,15 +328,6 @@ namespace QuanLyGiayDep.UI
             this.panelControl10.Size = new System.Drawing.Size(353, 48);
             this.panelControl10.TabIndex = 2;
             // 
-            // cbNhomSP
-            // 
-            this.cbNhomSP.Location = new System.Drawing.Point(126, 16);
-            this.cbNhomSP.Name = "cbNhomSP";
-            this.cbNhomSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbNhomSP.Size = new System.Drawing.Size(155, 20);
-            this.cbNhomSP.TabIndex = 1;
-            // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -350,16 +345,7 @@ namespace QuanLyGiayDep.UI
             this.panelControl4.Location = new System.Drawing.Point(3, 160);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(353, 52);
-            this.panelControl4.TabIndex = 2;
-            // 
-            // cbThuongHieu
-            // 
-            this.cbThuongHieu.Location = new System.Drawing.Point(126, 11);
-            this.cbThuongHieu.Name = "cbThuongHieu";
-            this.cbThuongHieu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbThuongHieu.Size = new System.Drawing.Size(155, 20);
-            this.cbThuongHieu.TabIndex = 1;
+            this.panelControl4.TabIndex = 3;
             // 
             // labelControl3
             // 
@@ -371,55 +357,24 @@ namespace QuanLyGiayDep.UI
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Thương Hiệu :";
             // 
-            // panelControl5
-            // 
-            this.panelControl5.Controls.Add(this.dateEdit1);
-            this.panelControl5.Controls.Add(this.labelControl4);
-            this.panelControl5.Location = new System.Drawing.Point(3, 218);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(353, 47);
-            this.panelControl5.TabIndex = 2;
-            // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(126, 13);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(155, 20);
-            this.dateEdit1.TabIndex = 1;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(8, 14);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(70, 16);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "Ngày Nhập :";
-            // 
             // panelControl6
             // 
-            this.panelControl6.Controls.Add(this.textEdit4);
+            this.panelControl6.Controls.Add(this.txtGiaNhap);
             this.panelControl6.Controls.Add(this.labelControl5);
             this.panelControl6.Controls.Add(this.panelControl7);
-            this.panelControl6.Location = new System.Drawing.Point(3, 271);
+            this.panelControl6.Location = new System.Drawing.Point(3, 218);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(353, 47);
-            this.panelControl6.TabIndex = 2;
+            this.panelControl6.TabIndex = 4;
             // 
-            // textEdit4
+            // txtGiaNhap
             // 
-            this.textEdit4.Location = new System.Drawing.Point(126, 17);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Size = new System.Drawing.Size(155, 22);
-            this.textEdit4.TabIndex = 1;
+            this.txtGiaNhap.Location = new System.Drawing.Point(126, 17);
+            this.txtGiaNhap.Name = "txtGiaNhap";
+            this.txtGiaNhap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaNhap.Properties.Appearance.Options.UseFont = true;
+            this.txtGiaNhap.Size = new System.Drawing.Size(155, 22);
+            this.txtGiaNhap.TabIndex = 1;
             // 
             // labelControl5
             // 
@@ -466,7 +421,7 @@ namespace QuanLyGiayDep.UI
             this.panelControl13.Location = new System.Drawing.Point(3, 324);
             this.panelControl13.Name = "panelControl13";
             this.panelControl13.Size = new System.Drawing.Size(353, 68);
-            this.panelControl13.TabIndex = 5;
+            this.panelControl13.TabIndex = 11;
             // 
             // btnSave
             // 
@@ -500,27 +455,28 @@ namespace QuanLyGiayDep.UI
             this.groupControl1.Location = new System.Drawing.Point(364, 2);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(534, 527);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Chi tiết sản phẩm";
             // 
             // panelControl8
             // 
-            this.panelControl8.Controls.Add(this.textEdit6);
+            this.panelControl8.Controls.Add(this.txtSoLuong);
             this.panelControl8.Controls.Add(this.labelControl7);
             this.panelControl8.Location = new System.Drawing.Point(5, 115);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Size = new System.Drawing.Size(201, 36);
-            this.panelControl8.TabIndex = 6;
+            this.panelControl8.TabIndex = 8;
             // 
-            // textEdit6
+            // txtSoLuong
             // 
-            this.textEdit6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.chiTietSanPhamBindingSource, "Soluong", true));
-            this.textEdit6.Location = new System.Drawing.Point(77, 5);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit6.Properties.Appearance.Options.UseFont = true;
-            this.textEdit6.Size = new System.Drawing.Size(118, 22);
-            this.textEdit6.TabIndex = 1;
+            this.txtSoLuong.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.chiTietSanPhamBindingSource, "Soluong", true));
+            this.txtSoLuong.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.chiTietSanPhamBindingSource, "Soluong", true));
+            this.txtSoLuong.Location = new System.Drawing.Point(77, 5);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Properties.Appearance.Options.UseFont = true;
+            this.txtSoLuong.Size = new System.Drawing.Size(118, 22);
+            this.txtSoLuong.TabIndex = 1;
             // 
             // chiTietSanPhamBindingSource
             // 
@@ -556,7 +512,7 @@ namespace QuanLyGiayDep.UI
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(529, 370);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.TabIndex = 10;
             // 
             // mauDataGridViewTextBoxColumn
             // 
@@ -585,7 +541,7 @@ namespace QuanLyGiayDep.UI
             this.panelControl12.Location = new System.Drawing.Point(212, 32);
             this.panelControl12.Name = "panelControl12";
             this.panelControl12.Size = new System.Drawing.Size(297, 104);
-            this.panelControl12.TabIndex = 4;
+            this.panelControl12.TabIndex = 9;
             // 
             // txtfilename
             // 
@@ -624,11 +580,12 @@ namespace QuanLyGiayDep.UI
             this.panelControl11.Location = new System.Drawing.Point(5, 73);
             this.panelControl11.Name = "panelControl11";
             this.panelControl11.Size = new System.Drawing.Size(201, 36);
-            this.panelControl11.TabIndex = 2;
+            this.panelControl11.TabIndex = 7;
             // 
             // txtSize
             // 
             this.txtSize.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.chiTietSanPhamBindingSource, "Sizes", true));
+            this.txtSize.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.chiTietSanPhamBindingSource, "Sizes", true));
             this.txtSize.Location = new System.Drawing.Point(77, 5);
             this.txtSize.Name = "txtSize";
             this.txtSize.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -653,11 +610,12 @@ namespace QuanLyGiayDep.UI
             this.panelControl9.Location = new System.Drawing.Point(5, 31);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(201, 36);
-            this.panelControl9.TabIndex = 2;
+            this.panelControl9.TabIndex = 6;
             // 
             // txtMau
             // 
             this.txtMau.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.chiTietSanPhamBindingSource, "Mau", true));
+            this.txtMau.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.chiTietSanPhamBindingSource, "Mau", true));
             this.txtMau.Location = new System.Drawing.Point(77, 5);
             this.txtMau.Name = "txtMau";
             this.txtMau.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -674,6 +632,84 @@ namespace QuanLyGiayDep.UI
             this.labelControl8.Size = new System.Drawing.Size(33, 16);
             this.labelControl8.TabIndex = 0;
             this.labelControl8.Text = "Màu :";
+            // 
+            // cbNhomSP
+            // 
+            this.cbNhomSP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhomSPBindingSource, "TenNhomSP", true));
+            this.cbNhomSP.FormattingEnabled = true;
+            this.cbNhomSP.Location = new System.Drawing.Point(126, 14);
+            this.cbNhomSP.Name = "cbNhomSP";
+            this.cbNhomSP.Size = new System.Drawing.Size(155, 21);
+            this.cbNhomSP.TabIndex = 2;
+            // 
+            // nhomSPBindingSource
+            // 
+            this.nhomSPBindingSource.DataSource = typeof(DTO.NhomSP);
+            // 
+            // cbThuongHieu
+            // 
+            this.cbThuongHieu.FormattingEnabled = true;
+            this.cbThuongHieu.Location = new System.Drawing.Point(126, 15);
+            this.cbThuongHieu.Name = "cbThuongHieu";
+            this.cbThuongHieu.Size = new System.Drawing.Size(155, 21);
+            this.cbThuongHieu.TabIndex = 2;
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.txtGiaBan);
+            this.panelControl5.Controls.Add(this.labelControl4);
+            this.panelControl5.Controls.Add(this.panelControl14);
+            this.panelControl5.Location = new System.Drawing.Point(3, 271);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(353, 47);
+            this.panelControl5.TabIndex = 5;
+            // 
+            // txtGiaBan
+            // 
+            this.txtGiaBan.Location = new System.Drawing.Point(126, 17);
+            this.txtGiaBan.Name = "txtGiaBan";
+            this.txtGiaBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaBan.Properties.Appearance.Options.UseFont = true;
+            this.txtGiaBan.Size = new System.Drawing.Size(155, 22);
+            this.txtGiaBan.TabIndex = 1;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(12, 20);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(52, 16);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Giá Bán :";
+            // 
+            // panelControl14
+            // 
+            this.panelControl14.Controls.Add(this.textEdit2);
+            this.panelControl14.Controls.Add(this.labelControl11);
+            this.panelControl14.Location = new System.Drawing.Point(5, 76);
+            this.panelControl14.Name = "panelControl14";
+            this.panelControl14.Size = new System.Drawing.Size(276, 79);
+            this.panelControl14.TabIndex = 2;
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(115, 26);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit2.Properties.Appearance.Options.UseFont = true;
+            this.textEdit2.Size = new System.Drawing.Size(118, 22);
+            this.textEdit2.TabIndex = 1;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(15, 29);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(52, 16);
+            this.labelControl11.TabIndex = 0;
+            this.labelControl11.Text = "Giá Bán :";
             // 
             // ucSanpham
             // 
@@ -703,20 +739,13 @@ namespace QuanLyGiayDep.UI
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
             this.panelControl10.ResumeLayout(false);
             this.panelControl10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbNhomSP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbThuongHieu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGiaNhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             this.panelControl7.PerformLayout();
@@ -728,7 +757,7 @@ namespace QuanLyGiayDep.UI
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
             this.panelControl8.ResumeLayout(false);
             this.panelControl8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietSanPhamBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).EndInit();
@@ -743,6 +772,15 @@ namespace QuanLyGiayDep.UI
             this.panelControl9.ResumeLayout(false);
             this.panelControl9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMau.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhomSPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).EndInit();
+            this.panelControl14.ResumeLayout(false);
+            this.panelControl14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -769,10 +807,8 @@ namespace QuanLyGiayDep.UI
         private DevExpress.XtraEditors.TextEdit textEdit5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.PanelControl panelControl6;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit txtGiaNhap;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.PanelControl panelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl3;
@@ -797,13 +833,19 @@ namespace QuanLyGiayDep.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn soluongDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource chiTietSanPhamBindingSource;
         private DevExpress.XtraEditors.PanelControl panelControl8;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.TextEdit txtSoLuong;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.ComboBoxEdit cbNhomSP;
-        private DevExpress.XtraEditors.ComboBoxEdit cbThuongHieu;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl13;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private System.Windows.Forms.ComboBox cbNhomSP;
+        private System.Windows.Forms.BindingSource nhomSPBindingSource;
+        private System.Windows.Forms.ComboBox cbThuongHieu;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraEditors.TextEdit txtGiaBan;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.PanelControl panelControl14;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
     }
 }

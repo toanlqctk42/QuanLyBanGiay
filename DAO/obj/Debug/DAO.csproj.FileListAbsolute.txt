@@ -25,3 +25,30 @@ G:\test\Năm 4\HKII\CSDL Phân tán\QuanLyBanGiay\DAO\bin\Debug\de\DevExpress.Xp
 G:\test\Năm 4\HKII\CSDL Phân tán\QuanLyBanGiay\DAO\bin\Debug\es\DevExpress.Xpo.v19.2.resources.dll
 G:\test\Năm 4\HKII\CSDL Phân tán\QuanLyBanGiay\DAO\bin\Debug\ja\DevExpress.Xpo.v19.2.resources.dll
 G:\test\Năm 4\HKII\CSDL Phân tán\QuanLyBanGiay\DAO\bin\Debug\ru\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\DAO.dll.config
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\DAO.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\DAO.pdb
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\DevExpress.Data.v19.2.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\DevExpress.Xpo.v19.2.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\DTO.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\EntityFramework.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\DTO.pdb
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\DTO.dll.config
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\DevExpress.Data.v19.2.xml
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\DevExpress.Xpo.v19.2.xml
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\EntityFramework.xml
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\de\DevExpress.Data.v19.2.resources.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\es\DevExpress.Data.v19.2.resources.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\ja\DevExpress.Data.v19.2.resources.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\ru\DevExpress.Data.v19.2.resources.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\de\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\es\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\ja\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\bin\Debug\ru\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\obj\Debug\DAO.dll
+C:\Users\Quoc Toan\Downloads\QuanLyBanGiay\DAO\obj\Debug\DAO.pdb
