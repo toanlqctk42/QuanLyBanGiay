@@ -35,26 +35,24 @@ namespace QuanLyGiayDep.UI
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cbChinhanh = new System.Windows.Forms.ComboBox();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.billsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colNhanVienID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenChiNhanh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNgaylapBill = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSDTKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTienHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colToTal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nhanVienIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenChiNhanhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaylapBillDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenKhachHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTKhachHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tienHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toTalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -104,7 +102,7 @@ namespace QuanLyGiayDep.UI
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.gridControl1);
+            this.groupControl2.Controls.Add(this.dataGridView1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
@@ -112,93 +110,77 @@ namespace QuanLyGiayDep.UI
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Danh sách Hoá đơn";
             // 
-            // gridControl1
-            // 
-            this.gridControl1.DataSource = this.billsBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 23);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.ShowOnlyPredefinedDetails = true;
-            this.gridControl1.Size = new System.Drawing.Size(804, 426);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
             // billsBindingSource
             // 
             this.billsBindingSource.DataSource = typeof(DTO.Bills);
             // 
-            // gridView1
+            // dataGridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colNhanVienID,
-            this.colTenChiNhanh,
-            this.colNgaylapBill,
-            this.colTenKhachHang,
-            this.colSDTKhachHang,
-            this.colTienHang,
-            this.colDiscount,
-            this.colToTal});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nhanVienIDDataGridViewTextBoxColumn,
+            this.tenChiNhanhDataGridViewTextBoxColumn,
+            this.ngaylapBillDataGridViewTextBoxColumn,
+            this.tenKhachHangDataGridViewTextBoxColumn,
+            this.sDTKhachHangDataGridViewTextBoxColumn,
+            this.tienHangDataGridViewTextBoxColumn,
+            this.discountDataGridViewTextBoxColumn,
+            this.toTalDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.billsBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(2, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(804, 426);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // colNhanVienID
+            // nhanVienIDDataGridViewTextBoxColumn
             // 
-            this.colNhanVienID.FieldName = "Nhân viên ID";
-            this.colNhanVienID.Name = "colNhanVienID";
-            this.colNhanVienID.Visible = true;
-            this.colNhanVienID.VisibleIndex = 0;
+            this.nhanVienIDDataGridViewTextBoxColumn.DataPropertyName = "NhanVienID";
+            this.nhanVienIDDataGridViewTextBoxColumn.HeaderText = "Nhân Viên ID";
+            this.nhanVienIDDataGridViewTextBoxColumn.Name = "nhanVienIDDataGridViewTextBoxColumn";
             // 
-            // colTenChiNhanh
+            // tenChiNhanhDataGridViewTextBoxColumn
             // 
-            this.colTenChiNhanh.FieldName = "Tên chi nhánh";
-            this.colTenChiNhanh.Name = "colTenChiNhanh";
-            this.colTenChiNhanh.Visible = true;
-            this.colTenChiNhanh.VisibleIndex = 1;
+            this.tenChiNhanhDataGridViewTextBoxColumn.DataPropertyName = "TenChiNhanh";
+            this.tenChiNhanhDataGridViewTextBoxColumn.HeaderText = "Tên Chi Nhánh";
+            this.tenChiNhanhDataGridViewTextBoxColumn.Name = "tenChiNhanhDataGridViewTextBoxColumn";
             // 
-            // colNgaylapBill
+            // ngaylapBillDataGridViewTextBoxColumn
             // 
-            this.colNgaylapBill.FieldName = "Ngày tạo hoá đơn";
-            this.colNgaylapBill.Name = "colNgaylapBill";
-            this.colNgaylapBill.Visible = true;
-            this.colNgaylapBill.VisibleIndex = 2;
+            this.ngaylapBillDataGridViewTextBoxColumn.DataPropertyName = "NgaylapBill";
+            this.ngaylapBillDataGridViewTextBoxColumn.HeaderText = "Ngày lập hoá đơn";
+            this.ngaylapBillDataGridViewTextBoxColumn.Name = "ngaylapBillDataGridViewTextBoxColumn";
             // 
-            // colTenKhachHang
+            // tenKhachHangDataGridViewTextBoxColumn
             // 
-            this.colTenKhachHang.FieldName = "Tên Khách Hàng";
-            this.colTenKhachHang.Name = "colTenKhachHang";
-            this.colTenKhachHang.Visible = true;
-            this.colTenKhachHang.VisibleIndex = 3;
+            this.tenKhachHangDataGridViewTextBoxColumn.DataPropertyName = "TenKhachHang";
+            this.tenKhachHangDataGridViewTextBoxColumn.HeaderText = "Tên Khách Hàng";
+            this.tenKhachHangDataGridViewTextBoxColumn.Name = "tenKhachHangDataGridViewTextBoxColumn";
             // 
-            // colSDTKhachHang
+            // sDTKhachHangDataGridViewTextBoxColumn
             // 
-            this.colSDTKhachHang.FieldName = "SĐT";
-            this.colSDTKhachHang.Name = "colSDTKhachHang";
-            this.colSDTKhachHang.Visible = true;
-            this.colSDTKhachHang.VisibleIndex = 4;
+            this.sDTKhachHangDataGridViewTextBoxColumn.DataPropertyName = "SDTKhachHang";
+            this.sDTKhachHangDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTKhachHangDataGridViewTextBoxColumn.Name = "sDTKhachHangDataGridViewTextBoxColumn";
             // 
-            // colTienHang
+            // tienHangDataGridViewTextBoxColumn
             // 
-            this.colTienHang.FieldName = "Tổng";
-            this.colTienHang.Name = "colTienHang";
-            this.colTienHang.Visible = true;
-            this.colTienHang.VisibleIndex = 5;
+            this.tienHangDataGridViewTextBoxColumn.DataPropertyName = "TienHang";
+            this.tienHangDataGridViewTextBoxColumn.HeaderText = "Tổng";
+            this.tienHangDataGridViewTextBoxColumn.Name = "tienHangDataGridViewTextBoxColumn";
             // 
-            // colDiscount
+            // discountDataGridViewTextBoxColumn
             // 
-            this.colDiscount.FieldName = "Giảm giá";
-            this.colDiscount.Name = "colDiscount";
-            this.colDiscount.Visible = true;
-            this.colDiscount.VisibleIndex = 6;
+            this.discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
+            this.discountDataGridViewTextBoxColumn.HeaderText = "Giảm Giá";
+            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
             // 
-            // colToTal
+            // toTalDataGridViewTextBoxColumn
             // 
-            this.colToTal.FieldName = "Thực thu";
-            this.colToTal.Name = "colToTal";
-            this.colToTal.Visible = true;
-            this.colToTal.VisibleIndex = 7;
+            this.toTalDataGridViewTextBoxColumn.DataPropertyName = "ToTal";
+            this.toTalDataGridViewTextBoxColumn.HeaderText = "Thực thu";
+            this.toTalDataGridViewTextBoxColumn.Name = "toTalDataGridViewTextBoxColumn";
             // 
             // ucThongke
             // 
@@ -215,9 +197,8 @@ namespace QuanLyGiayDep.UI
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,16 +210,15 @@ namespace QuanLyGiayDep.UI
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.ComboBox cbChinhanh;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
         private System.Windows.Forms.BindingSource billsBindingSource;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colNhanVienID;
-        private DevExpress.XtraGrid.Columns.GridColumn colTenChiNhanh;
-        private DevExpress.XtraGrid.Columns.GridColumn colNgaylapBill;
-        private DevExpress.XtraGrid.Columns.GridColumn colTenKhachHang;
-        private DevExpress.XtraGrid.Columns.GridColumn colSDTKhachHang;
-        private DevExpress.XtraGrid.Columns.GridColumn colTienHang;
-        private DevExpress.XtraGrid.Columns.GridColumn colDiscount;
-        private DevExpress.XtraGrid.Columns.GridColumn colToTal;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nhanVienIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenChiNhanhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngaylapBillDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenKhachHangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDTKhachHangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tienHangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn toTalDataGridViewTextBoxColumn;
     }
 }

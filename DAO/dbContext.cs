@@ -79,7 +79,7 @@ namespace DAO
             TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
             if (chinhanhID != WorkingContext.Instance.CurrentBranchId)
             {
-                return tshoesContext.Database.SqlQuery<Bills>($"exec [dbo].[sp_GetAllBills] {chinhanhID}").ToList();
+                return tshoesContext.Database.SqlQuery<Bills>("exec [dbo].[sp_GetAllBills]").ToList();
             }
             else
             {
