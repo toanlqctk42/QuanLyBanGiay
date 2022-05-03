@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DAO;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace QuanLyGiayDep.UI
 
         private void ucHome_Load(object sender, EventArgs e)
         {
-
+            chiTietSanPhamBindingSource.DataSource = dbContext.Instance.GetchiTietSanPhams();
         }
     }
 }

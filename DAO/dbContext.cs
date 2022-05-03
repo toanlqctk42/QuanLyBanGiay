@@ -61,6 +61,12 @@ namespace DAO
             return tshoesContext.Bills.ToList();
         }
 
+        public List<BillDetails> GetBillDetails()
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            return tshoesContext.BillDetails.ToList();
+        }
+
         public List<Account> FilterAccount_chinhanhID(int chinhanhID)
         {
             TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
@@ -195,5 +201,130 @@ namespace DAO
                 }
         }
 
+        public List<ChiTietSanPham> LayDsSanPhamDaBan(int chinhanhID , DateTime ngaybatdau , DateTime NgayKetThuc)
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            if(chinhanhID != WorkingContext.Instance.CurrentBranchId)
+            {
+                return tshoesContext.Database.SqlQuery<ChiTietSanPham>($"exec sp_dsMatHangDaBan '{ngaybatdau}', '{NgayKetThuc}'").ToList();
+            }
+            else
+            {
+                List<ChiTietSanPham> ct = new List<ChiTietSanPham>();
+                foreach (var ctsp in GetchiTietSanPhams())
+                {
+                    ctsp.Soluong = 0;
+                    foreach (var dt in GetBillDetails())
+                    {
+                        if(ctsp.ChitietSPID == dt.ChitietSP_ID)
+                        {
+                            foreach (var bi in GetBills())
+                            {
+                                if(bi.BillID == dt.Bills_ID && bi.NgaylapBill>= ngaybatdau && bi.NgaylapBill<=NgayKetThuc)
+                                {
+                                    ctsp.Soluong += dt.Soluong;
+                                }
+                            }
+                        }
+                    }
+                    if(ctsp.Soluong != 0)
+                    {
+                        ct.Add(ctsp);
+                    }
+                }
+                return ct;
+
+            }
+        }
+
+        public List<ChiTietSanPham> LaydsbanhangtheocuaNhanVien(int chinhanhID , int NhanVienID)
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            if (chinhanhID != WorkingContext.Instance.CurrentBranchId)
+            {
+                return tshoesContext.Database.SqlQuery<ChiTietSanPham>($"exec sp_dsSanPham_NhanVienDaBan {NhanVienID}").ToList();
+            }
+            else
+            {
+                List<ChiTietSanPham> ct = new List<ChiTietSanPham>();
+                foreach (var ctsp in GetchiTietSanPhams())
+                {
+                    ctsp.Soluong = 0;
+                    foreach (var dt in GetBillDetails())
+                    {
+                        if (ctsp.ChitietSPID == dt.ChitietSP_ID)
+                        {
+                            foreach (var bi in GetBills())
+                            {
+                                if (bi.BillID == dt.Bills_ID && bi.NhanVienID == NhanVienID)
+                                {
+                                    ctsp.Soluong += dt.Soluong;
+                                }
+                            }
+                        }
+                    }
+                    if (ctsp.Soluong != 0)
+                    {
+                        ct.Add(ctsp);
+                    }
+                }
+                return ct;
+            }
+        }
+
+        public List<ChiTietSanPham> SanPhamBanChayNhatTheochiNhanh(int chinhanhID , int sothongke , DateTime ngaybatdau , DateTime ngayketthuc)
+        {
+            TshoesContext tshoesContext = WorkingContext.Instance._dbContext;
+            if(chinhanhID == WorkingContext.Instance.CurrentBranchId)
+            {
+                return tshoesContext.Database.SqlQuery<ChiTietSanPham>($"exec sp_SanPhamBanChayNhat {sothongke},'{ngaybatdau}','{ngayketthuc}'").ToList();
+            }
+            else
+            {
+                List<ChiTietSanPham> ct = new List<ChiTietSanPham>();
+                foreach (var ctsp in GetchiTietSanPhams())
+                {
+                    ctsp.Soluong = 0;
+                    foreach (var dt in GetBillDetails())
+                    {
+                        if (ctsp.ChitietSPID == dt.ChitietSP_ID)
+                        {
+                            foreach (var bi in GetBills())
+                            {
+                                if (bi.BillID == dt.Bills_ID && bi.NgaylapBill >= ngaybatdau && bi.NgaylapBill <= ngayketthuc)
+                                {
+                                    ctsp.Soluong += dt.Soluong;
+                                }
+                            }
+                        }
+                    }
+                    if (ctsp.Soluong != 0)
+                    {
+                        ct.Add(ctsp);
+                    }
+                }
+                for (int i = 0; i < ct.Count-1; i++)
+                {
+                    for (int j = i+1; j < ct.Count; j++)
+                    {
+                        if(ct[i].Soluong<ct[j].Soluong)
+                        {
+                            ChiTietSanPham temp = ct[i];
+                            ct[i] = ct[j];
+                            ct[j] = temp;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < ct.Count; i++)
+                {
+                    if(i>sothongke)
+                    {
+                        ct.RemoveAt(i);
+                    }
+                }
+                return ct;
+            }
+        }
     }
 }
